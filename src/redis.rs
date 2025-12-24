@@ -7,6 +7,8 @@ impl redis::ToRedisArgs for crate::FastStr {
     }
 }
 
+impl redis::ToSingleRedisArg for crate::FastStr {}
+
 impl redis::FromRedisValue for crate::FastStr {
     fn from_redis_value_ref(v: &redis::Value) -> Result<Self, redis::ParsingError> {
         match v {
